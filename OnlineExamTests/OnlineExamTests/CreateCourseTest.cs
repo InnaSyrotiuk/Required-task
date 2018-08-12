@@ -17,37 +17,37 @@ namespace OnlineExamTests
         [Test]
         public void CreateCourseTet()
         {
-            driver.Navigate().GoToUrl(BaseUrl);
-            var loginButton = driver.FindElement(By.XPath("//a[@href='/Account/Login']"));
+            driver.GoToUrl(BaseUrl);
+            var loginButton = driver.FindElementByXpath("//a[@href='/Account/Login']");
             loginButton.Click();
-            var inpuEmail = driver.FindElement(By.XPath("//*[contains(@id,'emailLogin')]"));
+            var inpuEmail = driver.FindElementByXpath("//*[contains(@id,'emailLogin')]");
             inpuEmail.SendKeys("teacher@gmail.com");
-            var inputPassword = driver.FindElement(By.XPath("//*[contains(@id,'passwordLogin')]"));
+            var inputPassword = driver.FindElementByXpath("//*[contains(@id,'passwordLogin')]");
             inputPassword.SendKeys("Teacher_123");
-            var signInButton = driver.FindElement(By.XPath("//*[@value='Sign In']"));
+            var signInButton = driver.FindElementByXpath("//*[@value='Sign In']");
             signInButton.Click();
 
-            var navBarElement = driver.FindElement(By.XPath("//*[@id='gn-menu']//a[contains (@class, 'gn-icon-menu')]"));
+            var navBarElement = driver.FindElementByXpath("//*[@id='gn-menu']//a[contains (@class, 'gn-icon-menu')]");
             navBarElement.Click();
 
-            var courseButton = driver.FindElement(By.XPath("//a[@href='/CourseManagement']"));
+            var courseButton = driver.FindElementByXpath("//a[@href='/CourseManagement']");
             courseButton.Click();
 
-            var addCourseButtton = driver.FindElement(By.XPath("//a[@href='/CourseManagement/Create']"));
+            var addCourseButtton = driver.FindElementByXpath("//a[@href='/CourseManagement/Create']");
             addCourseButtton.Click();
 
             var newCourseName = "New Course" + Guid.NewGuid().ToString();
 
-            var inputCourseName = driver.FindElement(By.Id("Name"));
+            var inputCourseName = driver.FindElementByID("Name");
             inputCourseName.SendKeys(newCourseName);
 
-            var inputCourseDescription = driver.FindElement(By.XPath("//*[contains(@id, 'Description')]"));
+            var inputCourseDescription = driver.FindElementByXpath("//*[contains(@id, 'Description')]");
             inputCourseDescription.SendKeys("This course for beginners");
 
-            var saveButton = driver.FindElement(By.XPath("//*[contains(@value, 'Ok')]"));
+            var saveButton = driver.FindElementByXpath("//*[contains(@value, 'Ok')]");
             saveButton.Click();
         
-            var savedCourse = driver.FindElement(By.XPath($"//*[text()='{newCourseName}']"));
+            var savedCourse = driver.FindElementByXpath($"//*[text()='{newCourseName}']");
             var result = savedCourse.Text;
             Assert.AreEqual(newCourseName, result, "New course not found");
                    

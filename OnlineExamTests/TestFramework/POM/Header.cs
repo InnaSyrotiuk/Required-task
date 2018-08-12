@@ -18,7 +18,7 @@ namespace TestFramework.POM
 
      
 
-        public Header(IWebDriver driver) : base(driver)
+        public Header()
         {
             //this.driver = driver;
             Initialize();
@@ -27,12 +27,12 @@ namespace TestFramework.POM
 
         public override void Initialize()
         {
-            changeLanguageSelectElement = driver.FindElement(By.CssSelector("#requestCulture_RequestCulture_UICulture_Name"));
-            homePageLinkElement = driver.FindElement(By.CssSelector("#gn-menu > li:nth-child(2) > a"));
-            signOutButtonElement = driver.FindElement(By.CssSelector(@"[href*='/Account/Login']"));
-            signInLinkElement = driver.FindElement(By.CssSelector("submitLogin"));
-            signUpLinkElement = driver.FindElement(By.CssSelector(@"[href *= '/Account/Register']"));
-            userAccountManageLinkElement = driver.FindElement(By.CssSelector("#gn-menu > li:nth-child(3) > a:nth-child(1)"));
+            changeLanguageSelectElement = driver.FindElementByCssSelector("#requestCulture_RequestCulture_UICulture_Name");
+            homePageLinkElement = driver.FindElementByCssSelector("#gn-menu > li:nth-child(2) > a");
+            signOutButtonElement = driver.FindElementByCssSelector(@"[href*='/Account/Login']");
+            signInLinkElement = driver.FindElementByCssSelector("submitLogin");
+            signUpLinkElement = driver.FindElementByCssSelector(@"[href *= '/Account/Register']");
+            userAccountManageLinkElement = driver.FindElementByCssSelector("#gn-menu > li:nth-child(3) > a:nth-child(1)");
         }
     
 

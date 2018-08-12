@@ -46,7 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DriverFabric.cs" />
+    <Compile Include="ExtDriver.cs" />
     <Compile Include="POM\BasePage.cs" />
     <Compile Include="POM\Header.cs" />
     <Compile Include="POM\LogInPage.cs" />

@@ -10,11 +10,11 @@ namespace TestFramework.POM
 {
     public abstract class BasePage
     {
-        protected IWebDriver driver;
+        protected ExtDriver driver;
 
-        public BasePage(IWebDriver driver)
+        public BasePage()
         {
-            this.driver = driver;
+            driver = DriverFabric.GetDriver();
         }
 
         public void Wait(int time)

@@ -17,7 +17,7 @@ namespace TestFramework.POM
 
         
 
-        public LogInPage(IWebDriver driver) : base(driver)
+        public LogInPage()
         {
             Initialize();
         }
@@ -25,10 +25,10 @@ namespace TestFramework.POM
 
         public override void Initialize()
         {
-            emailInput = driver.FindElement(By.Id("emailLogin"));
-            passwordInput = driver.FindElement(By.Id("passwordLogin"));
-            rememberMeCheckBox = driver.FindElement(By.Id("RememberMe"));
-            signInInputSubmit = driver.FindElement(By.Id("submitLogin"));
+            emailInput = driver.FindElementByID("emailLogin");
+            passwordInput = driver.FindElementByID("passwordLogin");
+            rememberMeCheckBox = driver.FindElementByID("RememberMe");
+            signInInputSubmit = driver.FindElementByID("submitLogin");
         }
 
         public void SignIn(string email, string password)

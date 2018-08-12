@@ -16,27 +16,27 @@ namespace OnlineExamTests
         [Test]
         public void DeleteCourseTest()
         {
-            driver.Navigate().GoToUrl(BaseUrl);
-            var loginButton = driver.FindElement(By.XPath("//a[@href='/Account/Login']"));
+            driver.GoToUrl(BaseUrl);
+            var loginButton = driver.FindElementByXpath("//a[@href='/Account/Login']");
             loginButton.Click();
-            var inpuEmail = driver.FindElement(By.XPath("//*[contains(@id,'emailLogin')]"));
+            var inpuEmail = driver.FindElementByXpath("//*[contains(@id,'emailLogin')]");
             inpuEmail.SendKeys("teacher@gmail.com");
-            var inputPassword = driver.FindElement(By.XPath("//*[contains(@id,'passwordLogin')]"));
+            var inputPassword = driver.FindElementByXpath("//*[contains(@id,'passwordLogin')]");
             inputPassword.SendKeys("Teacher_123");
-            var signInButton = driver.FindElement(By.XPath("//*[@value='Sign In']"));
+            var signInButton = driver.FindElementByXpath("//*[@value='Sign In']");
             signInButton.Click();
 
-            var navBarElement = driver.FindElement(By.XPath("//*[@id='gn-menu']//a[contains (@class, 'gn-icon-menu')]"));
+            var navBarElement = driver.FindElementByXpath("//*[@id='gn-menu']//a[contains (@class, 'gn-icon-menu')]");
             navBarElement.Click();
 
-            var courseButton = driver.FindElement(By.XPath("//a[@href='/CourseManagement']"));
+            var courseButton = driver.FindElementByXpath("//a[@href='/CourseManagement']");
             courseButton.Click();
 
-            var myCourseButton = driver.FindElement(By.XPath("//a[@href='/CourseManagement/ViewCourses']"));
+            var myCourseButton = driver.FindElementByXpath("//a[@href='/CourseManagement/ViewCourses']");
             myCourseButton.Click();
 
             bool isDeleteVerified = false;
-            var listCourses = driver.FindElements(By.XPath("//*[@class='table']//tr"));
+            var listCourses = driver.FindElementsByXpath("//*[@class='table']//tr");
             var cousesExist = listCourses != null && listCourses.Any();
             Assert.True(cousesExist, "Not found any courses");
             if (listCourses != null)
@@ -61,7 +61,7 @@ namespace OnlineExamTests
 
             }
 
-            listCourses = driver.FindElements(By.XPath("//*[@class='table']//tr"));
+            listCourses = driver.FindElementsByXpath("//*[@class='table']//tr");
             foreach (IWebElement row in listCourses)
             {
                 try

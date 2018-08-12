@@ -6,27 +6,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestFramework;
 
 namespace OnlineExamTests
 {
     public class BaseTest
     {
-        public IWebDriver driver;
+        public ExtDriver driver;
 
         [SetUp]
         public void SetUp()
         {
-            driver = new ChromeDriver();
+            driver = DriverFabric.GetDriver();
         }
 
         [TearDown]
         public void TearDown()
         {
-            if (driver != null)
-            {
-                driver.Close();
-                driver.Dispose();
-            }
+            //if (driver != null)
+            //{
+            //    driver.Close();
+            //    driver.Dispose();
+            //    driver = null;
+            //}
+            DriverFabric.CleanUp();
+        }
+
+        [OneTimeTearDown]
+        public void GlobalTearDown()
+        {
+            
         }
     }
 }

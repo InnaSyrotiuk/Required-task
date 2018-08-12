@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestFramework;
 using TestFramework.POM;
 
 namespace OnlineExamTests
@@ -32,11 +33,11 @@ namespace OnlineExamTests
         [Test]
         public void LoginTest()
         {
-            driver.Navigate().GoToUrl(BaseUrl);
-            LogInPage login = new LogInPage(driver);
+            driver.GoToUrl(BaseUrl);
+            LogInPage login = new LogInPage();
             login.SignIn("student2@gmail.com", "Student_123");
             var expectedResult = "student2@gmail.com";
-            var userButton = driver.FindElement(By.XPath("//a[@href='/User']"));
+            var userButton = driver.FindElementByXpath("//a[@href='/User']");
             var result = userButton.Text;
             StringAssert.AreEqualIgnoringCase(expectedResult, result, "Button in Header does not match with user name");
             

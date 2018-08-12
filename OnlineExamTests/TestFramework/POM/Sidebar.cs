@@ -9,7 +9,7 @@ namespace TestFramework.POM
 {
     public class SideBar :BasePage
     {
-        public SideBar(IWebDriver driver) : base(driver)
+        public SideBar()
         {
             Initialize();
         }
@@ -33,13 +33,13 @@ namespace TestFramework.POM
 
         public override void Initialize()
         {
-            adminPanelMenuItemElement = driver.FindElement(By.XPath("//a[@href='/AdminPanel/Users']"));
-            newsMenuItemElement = driver.FindElement(By.CssSelector("a[href*='/AddNews/News']"));
-            ratingsMenuItemElement = driver.FindElement(By.XPath("//a[@href='/UserRating']"));
-            coursesMenuItemElement = driver.FindElement(By.XPath("//a[@href='/CourseManagement']"));
-            codeHistoryMenuItemElement = driver.FindElement(By.CssSelector(@"a[href*='/CodeHistory/History']"));
-            mailBoxMenuItemElement = driver.FindElement(By.XPath("//a[@href='/EmailMessages']"));
-            contactUsMenuItemElement = driver.FindElement(By.CssSelector(@"a[href*='/EmailMessages/GetEmail']"));
+            adminPanelMenuItemElement = driver.FindElementByXpath("//a[@href='/AdminPanel/Users']");
+            newsMenuItemElement = driver.FindElementByCssSelector("a[href*='/AddNews/News']");
+            ratingsMenuItemElement = driver.FindElementByXpath("//a[@href='/UserRating']");
+            coursesMenuItemElement = driver.FindElementByXpath("//a[@href='/CourseManagement']");
+            codeHistoryMenuItemElement = driver.FindElementByCssSelector(@"a[href*='/CodeHistory/History']");
+            mailBoxMenuItemElement = driver.FindElementByXpath("//a[@href='/EmailMessages']");
+            contactUsMenuItemElement = driver.FindElementByCssSelector(@"a[href*='/EmailMessages/GetEmail']");
         }
         
         
