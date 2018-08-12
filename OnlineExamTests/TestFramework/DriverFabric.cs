@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestFramework
 {
-    public class Class1
+    class DriverFabric
     {
     }
 }
