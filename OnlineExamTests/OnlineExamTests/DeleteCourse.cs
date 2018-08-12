@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 
 namespace OnlineExamTests
 {
-    public class DeleteCourse
+    public class DeleteCourse : BaseTest
     {
         public static string BaseUrl = "http://localhost:55842/";
-        IWebDriver driver = new ChromeDriver();
 
         [Test]
         public void DeleteCourseTest()
