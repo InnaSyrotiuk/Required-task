@@ -65,6 +65,12 @@
   <ItemGroup>
     <Folder Include="driver\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestFramework\TestFramework.csproj">
+      <Project>{8B70CCA7-2B4A-4AF6-BFFB-92976EE71EBC}</Project>
+      <Name>TestFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.Chrome.WebDriver.2.40\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.40\build\Selenium.Chrome.WebDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

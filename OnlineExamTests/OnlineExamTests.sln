@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineExamTests", "OnlineExamTests\OnlineExamTests.csproj", "{358D5386-B2A1-4F89-AD9A-E13FDFD5884B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFramework", "TestFramework\TestFramework.csproj", "{8B70CCA7-2B4A-4AF6-BFFB-92976EE71EBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{358D5386-B2A1-4F89-AD9A-E13FDFD5884B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{358D5386-B2A1-4F89-AD9A-E13FDFD5884B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{358D5386-B2A1-4F89-AD9A-E13FDFD5884B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B70CCA7-2B4A-4AF6-BFFB-92976EE71EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B70CCA7-2B4A-4AF6-BFFB-92976EE71EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B70CCA7-2B4A-4AF6-BFFB-92976EE71EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B70CCA7-2B4A-4AF6-BFFB-92976EE71EBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
